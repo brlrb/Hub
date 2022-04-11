@@ -249,7 +249,10 @@ class Streaming(ABC):
 
 class SampleStreaming(Streaming):
     def __init__(
-        self, dataset, tensors: Sequence[str], use_local_cache: bool = False,
+        self,
+        dataset,
+        tensors: Sequence[str],
+        use_local_cache: bool = False,
     ) -> None:
         super().__init__()
 

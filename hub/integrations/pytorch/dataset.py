@@ -108,7 +108,9 @@ def _worker_loop(
         watchdog = ManagerWatchdog()
 
         streaming = SampleStreaming(
-            dataset, tensors=tensors, use_local_cache=use_local_cache,
+            dataset,
+            tensors=tensors,
+            use_local_cache=use_local_cache,
         )
 
         schedule.shuffle()
@@ -421,7 +423,9 @@ class TorchDataset(torch.utils.data.IterableDataset):
             schedule = self.schedules[worker_info.id]
 
         streaming = SampleStreaming(
-            self.dataset, tensors=self.tensors, use_local_cache=self.use_local_cache,
+            self.dataset,
+            tensors=self.tensors,
+            use_local_cache=self.use_local_cache,
         )
 
         if self.shuffle:
